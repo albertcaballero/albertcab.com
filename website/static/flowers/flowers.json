@@ -1,0 +1,74 @@
+[
+	{
+		"img": ["hibiscus_fragilis.jpg"],
+		"name": "Mandrinette",
+		"science": "Hibiscus fragilis",
+		"place": "Barcelona, Spain",
+		"date": "28/08/2024",
+		"description": "There were a lot planted near the port of Barcelona.\nPretty sure it's a critically endangered species :/",
+		"infoLink": ""
+	},
+	{
+		"img": ["chrysanthemum_indicum.jpg"],
+		"name": "Indian chrysanthemum",
+		"science": "Chrysanthemum indicum",
+		"place": "Vilnius, Lithuania",
+		"date": "29/09/2024",
+		"description": "Very pretty, it has pink petals that turn green on the tips.\nMy girlfriend gave them to me and they survived a long time ^^",
+		"infoLink": ""
+	},
+	{
+		"img": ["aegonychon_purpurocaeruleum.jpg"],
+		"name": "purple gromwell",
+		"science": "aegonychon purpurocaeruleum",
+		"place": "Barcelona, Spain",
+		"date": "12/04/2024",
+		"description": "Found in the forest while on a walk, this intense blue really stands out amongst all the green",
+		"infoLink": ""
+	},
+	{
+		"img": ["crocus_neapolitanus.jpg"],
+		"name": "Neapolitan Crocus",
+		"science": "crocus neapolitanus",
+		"place": "Dusseldorf, Germany",
+		"date": "17/03/2024",
+		"description": "Found in the japanese flower garden in Dusseldorf, Germany",
+		"infoLink": ""
+	},
+	{
+		"img": ["magnolia_soulangeana.jpg"],
+		"name": "saucer magnolia",
+		"science": "magnolia x soulangeana",
+		"place": "Dusseldorf, Germany",
+		"date": "17/03/2024",
+		"description": "Found in the japanese flower garden in Dusseldorf, Germany. Almost reminded me of a Sakura tree",
+		"infoLink": ""
+	},
+	{
+		"img": ["melaleuca_rugulosa.jpg"],
+		"name": "scarlet bottlebrush",
+		"science": "melaleuca rugulosa",
+		"place": "Barcelona, Spain",
+		"date": "25/04/2024",
+		"description": "Really weird and mystical looking, I found it hanging from a house while on a run",
+		"infoLink": ""
+	},
+	{
+		"img": ["nerium_oleander.jpg"],
+		"name": "oleander / rosebay",
+		"science": "nerium oleander",
+		"place": "Barcelona, Spain",
+		"date": "23/07/2024",
+		"description": "I don't remember the story behind this one nor where I found it tbh",
+		"infoLink": ""
+	},
+	{
+		"img": ["rosa_agrestis.jpg"],
+		"name": "field briar",
+		"science": "rosa agrestis",
+		"place": "Barcelona, Spain",
+		"date": "03/05/2024",
+		"description": "Found in the forest while on a walk.",
+		"infoLink": ""
+	}
+]

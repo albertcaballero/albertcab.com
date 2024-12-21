@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Flowers</title>
+	<meta name="author" content="Albert Caballero">
+	<meta name="description" content="Pictures I've taken of flowers">
+	<link rel="icon" type="image/x-icon" href="/static/logo.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mouse+Memoirs">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Chakra+Petch">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Play">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gamja+Flower">
+</head>
+<body>
+	{% include '_header_albert.html' %}
+	<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Minimalist_info_Icon.png/800px-Minimalist_info_Icon.png"
+				class="modal-btn" onclick="openModal()"/>
+	<div style="display: block; margin-top: 3%; text-align: center;">
+		<div class="picture">
+			<a class="prev" onclick="nextFlower(-1)">&#10094;</a>
+			<a class="next" onclick="nextFlower(1)">&#10095;</a>
+			<img id="fImg" width="460px" style="border-radius: 5px;" src="/static/flowers/hibiscus_fragilis.jpg">
+		</div>
+		<div style="display: inline-block; margin-left: 4%; text-align: left; vertical-align: top; width: 400px;">
+			<h1 id="fName">Flower 1</h1>
+			<h2 id="fScience">Flower 2</h2>
+			<p id="fPlace"><strong>Place: </strong>My house</p>
+			<p id="fDate"><strong>Date: </strong>42/06/9000</p>
+			<p style="margin-top: 40px;" id="fDesc">
+				this flower is foudlnfadsjakfjlas <br>
+				fasdjfklajskdfjaskldjfkasjdklfjaskdf
+			</p>
+		</div>
+	</div>
+	<div id="popup" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<p>
+				I like taking pictures of flowers. I'm in no shape or form a professional, it's barely a hobby.<br>
+				I use <a href="https://identify.plantnet.org/" target="_blank">this website</a> to identify the plants, so it might not be perfect.
+			</p>
+		</div>
+	</div>
+</body>
+
+<script>
+	var flowerCount;
+	var flowers = [];
+	var currentId = 0;
+
+	const img = document.getElementById('fImg');
+    const name = document.getElementById('fName');
+    const science = document.getElementById('fScience');
+    const place = document.getElementById('fPlace');
+    const date = document.getElementById('fDate');
+    const desc = document.getElementById('fDesc');
+
+	setup();
+	async function setup() {
+        let r = await fetch("/static/flowers/flowers.json");
+        flowers = await r.json();
+        flowerCount = flowers.length;
+		console.log(flowers);
+		currentId = 0;
+		nextFlower(0);
+	}
+
+	async function nextFlower(i) {
+		currentId += i
+		if (currentId >= flowerCount)
+			currentId = 0;
+		else if(currentId < 0)
+			currentId = flowerCount - 1;
+		console.log(currentId);
+		console.log(flowers[currentId]);
+
+        img.src = "/static/flowers/"+flowers[currentId]['img'][0];
+        name.innerHTML =  flowers[currentId]['name'];
+        science.innerText =  flowers[currentId]['science'];
+        place.innerHTML = "<strong>Place: </strong>"+flowers[currentId]['place']+"</p>";
+        date.innerHTML = "<strong>Date: </strong>"+flowers[currentId]['date']+"</p>";
+        desc.innerText = flowers[currentId]['description'];
+    }
+
+	function openModal(){
+	let modal = document.getElementById("popup");
+	var span = document.getElementsByClassName("close")[0];
+	modal.style.display = "block";
+	window.onclick = function(event) {
+		if (event.target == modal) {
+		  modal.style.display = "none";
+		}
+	};
+	span.onclick = function() {
+		modal.style.display = "none";
+	};
+}
+</script>
+
+<style>
+	body{
+		background: rgb(212, 197, 200);
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		color: rgb(0, 0, 0);
+		font-family: 'Play', Arial;
+	}
+	h1, h2{
+		font-family: "Gamja Flower", sans-serif;
+		letter-spacing: 1px;
+	}
+	h1{
+		color: rgb(53, 55, 161);
+		font-size: 60px;
+		text-transform: uppercase;
+		margin-top: 10px;
+		margin-bottom: 0;
+	}
+	h2{
+		font-size: 30px;
+		color: rgb(79, 81, 180);
+		font-style: italic;
+		margin-top: 10px;
+		text-transform: capitalize;
+		margin-bottom: 30px;
+	}
+	p{
+		font-size: large;
+	}
+
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+	.prev:hover, .next:hover {
+	background-color: rgba(0,0,0,0.8);
+	}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+.picture{
+	display: inline-block;
+	position: relative;
+	width: 460px;
+	height: 800px;
+	justify-content: center;
+	align-items: center;
+}
+.image-container img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+
+.modal-btn{
+	float: right;
+	right: 2%;
+	position: relative;
+	width: 30px;
+	border-radius: 50%;
+	cursor: pointer;
+	font-size: x-large;
+	transition: all 0.3s;
+}
+	.modal-btn:hover{
+		transform: translateY(-2px);
+		background-color: rgba(83, 88, 90, 0.5);
+	}
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+.modal-content {
+	font-family: 'Play', Arial;
+	letter-spacing: 0.7px;
+	background-color: rgb(236, 193, 201);
+	color: rgb(8, 19, 37);
+	margin: 15% auto;
+	padding: 20px;
+	border: 2px solid #000000;
+	width: 40%;
+	border-radius: 10px;
+}
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+	
+</style>

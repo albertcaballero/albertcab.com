@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hand cut</title>
+	<meta name="author" content="Albert Caballero">
+	<meta name="description" content="Hand tracking shortcuts for PC">
+	<link rel="icon" type="image/x-icon" href="/static/logo.png">
+	<link rel="stylesheet" href="/static/albert_main.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mouse+Memoirs">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Chakra+Petch">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Play">
+	<link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" /> 
+</head>
+<body>
+	{% include '_header_albert.html' %}
+	<div style="display: block; text-align: center;">
+		<h1 style="font-size: 40px;">Hand Cut</h1>
+		<p class="plaintext">
+			Hand Cut uses hand gestures to perform shortcuts.<br>
+			The program uses camera-based hand tracking to detect your hand's gesture.
+			Made in Python using OpenCV and Mediapipe.
+		</p>
+		<div style="font-size: 55px; display: block; margin-bottom: 50px;">
+			<i class="skill devicon-opencv-plain-wordmark colored" title="Open CV"></i>
+			<i class="skill devicon-python-plain colored" title="Python"></i>
+		</div>
+		<iframe width="570" height="320" src="https://www.youtube.com/embed/m9bYUy1nOdc"> </iframe> <br>
+	</div>
+	<div style="display: block; text-align: center;">
+		<a href="https://github.com/albertcaballero/hand_recorder" target="_blank" class="btn">Github repository</a>
+	</div>
+	<p class="plaintext">
+		It was a little experiment so it lacks QoL and basic functionalities. <br>
+		I might (or might not) update it in the future.
+	</p>
+</body>
+
+
+<style>
+.plaintext {
+	font-size: larger;
+	letter-spacing: 1.5px;
+	line-height: 120%;
+}
+</style>
