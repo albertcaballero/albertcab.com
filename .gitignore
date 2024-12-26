@@ -105,6 +105,7 @@ venv/
 ENV/ 
 env.bak/ 
 venv.bak/ 
+albertcabenv/ 
 
 # mkdocs documentation 
 /site 
@@ -136,3 +137,9 @@ GitHub.sublime-settings
 !.vscode/launch.json 
 !.vscode/extensions.json 
 .history
+
+
+# Static
+/website/static_production/
+/website/static/*.zip
+/website/static/squat_king/*.zip
