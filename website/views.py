@@ -23,3 +23,15 @@ def curriculumPage(request):
 
 def fasterReaderPage(request):
 	return render(request, 'faster_reader.html')
+
+def mainPage(request):
+	return render(request, 'homey.html')
+
+def matematicsPage(request):
+	return render(request, 'matematics.html')
+
+def pongPage(request):
+	return render(request, 'pong.html')
+
+
+# https://albert.sh/ copy this guy

@@ -15,30 +15,44 @@
 <body>
 	{% include '_header_albert.html' %}
 	<div style="display: block; text-align: center;">
-		<img src="/static/squat_king/logo.png" alt="[Squat King logo]" width="400">
-		<p class="plaintext">Squat King is a <a href="https://www.jump-king.com/">Jump King</a> pseudo-mod made with Python and Mediapipe. <br> 
-			The program uses camera-based fullbody tracking to detect certain landmarks <br>
-			and calculate poses to determine game inputs.</p>
-		<p class="plaintext">As the name implies, you play by Squatting! <br>(No need to go to the gym anymore, trust me)</p>
+		<img src="/static/squatking_logo.png" alt="[Squat King logo]" width="400">
+		<div style="width: 45%; margin: auto; margin-bottom: 50px;">
+			<p>
+				Squat King is a <a href="https://www.jump-king.com/" target="_blank">Jump King</a> pseudo-mod made with Python and 
+				<a href="https://ai.google.dev/edge/mediapipe/solutions/vision/pose_landmarker" target="_blank">Mediapipe</a>.
+				The program uses camera-based fullbody tracking to detect certain landmarks
+				and calculate poses to determine game inputs.
+				<br><br>
+				The program works by simulating keyboard presses: direction arrows when both arms are on the same side (need to be a similar Y value) and
+				Spacebar when the knees and hips landmarks are closer than Y (determined by sensitivity).
+				<br><br>
+				The program has a menu made with <a href="https://docs.python.org/3/library/tkinter.html" target="_blank">Tkinter</a> where all settings and stats can be viewed
+				and from where the actual tracking part is launched, which opens an <a href="https://opencv.org/" target="_blank">OpenCV</a> window and the Mediapipe tracking.
+				<br><br>
+				The program doesn't modify the actual game, it just simulates the keyboard, so this has pros and cons. The main con is that the game has to be focused to function,
+				so with a dual monitor setup is no big problem (although bothersome still), but with 1 screen only it can cause problems.
+				On the other hand, the main pro includes adaptability, to other games or applications.
+				<br>Taking this to the extreme I made <a href="/hand_cut">Hand Recorder</a> which uses the same technology to execute keyboard shortcuts (uses hand tracking instead).
+				<br><br>
+				This was my first "real" project, meaning public and open to everyone, and I learnt so many new concepts. 
+				Most features implemented in the updates are thanks to the feedback I got.
+				<br>
+				As the name implies, you play by Squatting! <br>(No need to go to the gym anymore, trust me)</p>
+		</div>
 		<iframe width="570" height="320" src="https://www.youtube.com/embed/gxWz56XSCUA"> </iframe> <br>
 		<strong>Note: This video is out of date (based on v1.0), refer to the <a href="#changelog">changelog</a> for the latest updates.</strong>
-		<p class="plaintext">
-			Squat King is still in development and I plan to add and improve functionalities, <br>
-			so if you have any suggestion you can leave it <a href="/contact_me">here</a> or DM me on <a href="https://twitter.com/naito92live" target="_blank">twitter</a>. <br>
-			Thank you! ^^
-		</p>
 	</div>
-	<div style="display: block; text-align: center;">
+	<div style="display: block; text-align: center; margin-top: 20px;">
 		<strong>Note: Windows only!</strong>
-		<form action="/static/squat_king.zip" method="get">
+		<form action="https://naito.live/static/squat_king.zip" method="get">
 			<button type="submit" class="download_btn">Download - v2.1</button>
 		</form>
 		<button class="download_btn small_btn"><a href="https://github.com/albertcaballero/Squat_King" target="_blank">Github Repo</a></button>
 	</div>
-	<hr width="50%" style="margin-top: 20px; border: 2px solid #e6c366;">
+	<hr width="50%" style="margin-top: 20px; border: 2px solid black;">
 	<div id="changelog" style="display: flex; align-items: center; justify-content: center;">
 		<div style="text-align: left; width: 50%;">
-			<h1 style="text-decoration: underline; font-family: 'Chakra Petch'; color: #e6c366;">CHANGELOG</h1>
+			<h1 style="text-decoration: underline;">CHANGELOG</h1>
 			<h2>v2.1 - June 15th, 2024</h2>
 			<ul style="font-size: large;">
 				<li>Added buttons for precise (frame-by-frame) movement</li>
@@ -66,21 +80,14 @@
 <style>
 body{
 	color: rgb(0, 0, 0);
-	background: linear-gradient(#8ad8eb, #086cbd);
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	/* text-align: center; */
-	font-family: 'Play';
+	font-family: 'Play', Arial;
 }
 h2, h1{
-	color: #e6c366;
-	text-shadow: 0 0 3px black;
+	color: black;
+	/* text-shadow: 0 0 3px black; */
 }
-.dark-mode{
-	background: #033964;
-	color: antiquewhite;
-}
-.plaintext {
+p {
+	text-align: justify;
 	font-size: larger;
 	letter-spacing: 1.5px;
 	line-height: 120%;
@@ -88,7 +95,7 @@ h2, h1{
 .download_btn{
 	background-color: rgb(232, 30, 30);
 	color: white;
-	font-family: 'Chakra Petch';
+	font-family: 'Chakra Petch', Arial;
 	padding: 1%;
 	margin-top: 1%;
 	font-size: x-large;

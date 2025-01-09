@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>About me</title>
+	<meta name="author" content="Albert Caballero">
+	<meta name="description" content="About Albert Caballero (me)">
+	<link rel="icon" type="image/x-icon" href="/static/logo.png">
+	<link rel="stylesheet" href="/static/albert_main.css">
+	<script type="text/javascript" src="/static/matematics.js"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mouse+Memoirs">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Chakra+Petch">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Play">
+</head>
+<body onload="loadGame()">
+		<div class="operation" id="operation">		
+			<p id="operands" style="font-size: 50px;">5 x 5 = </p>
+			<input id="result" style="font-size: 30px; width: 100px;" maxlength="15" autofocus>
+			<button id="go" onclick="submit()" class="submit">GO</button>
+		</div>
+<div style="margin-top: 50px; padding-left: 50px;">
+	<div class="full bar">
+		<div id="progressBar" class="completed bar" style="width:0%">0/50</div> 
+	</div>
+</div>
+</body>
+
+<style>
+.submit{
+	margin-top: 20px;
+	font-size: large;
+}
+
+.operation{
+	display: flex;
+	width: 50%;
+	margin: auto;
+	gap: 2%;
+	align-items: center;
+	justify-content: center;
+}
+/* PROGRESS BAR */
+.bar{
+	background-color: rgb(255, 255, 255);
+	height: 30px;
+	border-radius: 10px;
+}
+.full{
+	background-color: rgb(255, 255, 255);
+	width: 50%;
+	margin-bottom: 50px;
+}
+.completed{
+	background-color: green;
+}
+</style>

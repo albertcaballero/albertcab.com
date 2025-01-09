@@ -16,17 +16,31 @@
 	<link rel="stylesheet" href="/static/albert_main.css">
 </head>
 <body>
-	<h1 style="font-size: 40px; margin-top: 40px;">Albert Caballero</h1>
-	<h3 style="font-size: larger;">Software Developer</h3>
-	<div class="pfp"></div>
+	<div class="title">
+		<img src="/static/pfp.png" class="pfp">
+		<div class="name">
+			<h1 style="font-size: 40px;">Albert Caballero</h1>
+			<h3 style="font-size: larger;">Software and web developer</h3>
+		</div>
+	</div>
 	<div class="contact_links">
 		<a href="https://www.github.com/albertcaballero" class="fa fa-github" target="_blank"></a>
 		<a href="mailto:albertcaballerocoll@gmail.com" class="fa fa-envelope" target="_blank"></a>
 		<a href="https://www.linkedin.com/in/albert-caballero-coll/" class="fa fa-linkedin-square" target="_blank"></a>
 	</div>
+	<div style="margin-top: 40px; margin-bottom: 40px;">
+		<h2>My projects</h2>
+		<a class="btn" href="/hand_cut" title="Shortcuts with hand gestures on PC">Hand Shortcuts</a>
+		<a class="btn" href="/squat_king" title="A mod for Jump King">Squat King</a>
+		<a class="btn" href="https://naito.live/vtuberdle/" title="A vtuber guessing game" target="_blank">Vtuberdle</a>
+	</div>
+	<hr style="width: 50%; margin-top: 20px; border: 1px solid #000000;">
 	<h2>About</h2>
-	<p style="font-size: 20px; line-height: 25px;">
-		I was born in 2004 in Spain, started programming in a school called <a href="https://42.fr/en/homepage/" target="_blank">42</a><br>
+	<p style="font-size: 20px; line-height: 25px; width: 45%; margin: auto;">
+		I was born in 2004 in Spain, started programming in a school called <a href="https://42.fr/en/homepage/" target="_blank">42</a>
+		<br>
+		I love building efficient programs and enjoy tackling new challenges. I mainly focus on Python, but have experience in C/C++ & Ruby.
+		Whether it's writing clean code, debugging, or optimizing, I love and enjoy solving problems and creating lasting solutions.
 	</p>
 	<a href="/about" style="font-weight: bolder;">More...</a>
 	<h2>Skills</h2>
@@ -52,29 +66,35 @@
 		<i class="skill devicon-postgresql-plain-wordmark colored" title="PostgreSQL"></i>
 	</div>
 	<a class="btn" href="/curriculum_vitae">Curriculum</a>
-	<hr style="width: 60%; margin-top: 20px; border: 2px solid #000000;">
+	<hr style="width: 50%; margin-top: 20px; border: 1px solid #000000;">
 	<div style="margin-top: 40px; margin-bottom: 40px;">
-		<h2>My stuff</h2>
-		<a class="btn" href="/squat_king" title="A mod for Jump King">Squat King</a>
-		<a class="btn" href="/hand_cut" title="Shortcuts with hand gestures on PC">Hand Shortcuts</a>
+		<h2>Other Stuff</h2>
 		<a class="btn" href="/flowers" title="I like photographing flowers">Flowers</a>
-		<!-- <a class="btn" href="/faster_reader" title="A tool to help you read faster">Faster Reader</a> -->
 	</div>
 </body>
 </html>
 
 <style>
-.pfp{
-	width: 200px;
-	height: 200px;
-	border-radius: 50%;
-	background-image: url("/static/pfp.png");
-	background-size: contain;
-	display: inline-block;
+.title{
+	display: block;
+	text-align: center;
+	margin-top: 3%;
 }
-	.pfp:hover{
-		background-image: url('/static/pfp2.png');
-	}
+
+.pfp{
+	width: 170px;
+	height: 170px;
+	border-radius: 50%;
+	display: inline-block;
+	position: relative;
+}
+
+.name{
+	display: inline-block;
+  margin-left: 2%;
+  text-align: left;
+  vertical-align: top;
+}
 
 .skill{
 	display: inline-block;
