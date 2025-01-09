@@ -21,6 +21,8 @@ function showResult(txt){
 	setTimeout(function () {
 		div.remove();
 	}, 1000);
+
+	
 }
 
 function submit(){
