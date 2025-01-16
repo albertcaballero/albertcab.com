@@ -17,11 +17,25 @@
 <body>
 	{% include '_header_albert.html' %}
 	<div style="display: block; text-align: center;">
-		<h1 style="font-size: 40px;">Hand Cut</h1>
-		<p class="plaintext">
-			Hand Cut uses hand gestures to perform shortcuts.<br>
+		<h1 style="font-size: 40px;">Hand-Cut</h1>
+		<p>
+			Hand Cut uses hand gestures to perform shortcuts.
 			The program uses camera-based hand tracking to detect your hand's gesture.
-			Made in Python using OpenCV and Mediapipe.
+			Made with Python using <a href="https://opencv.org/" target="_blank">OpenCV</a> and 
+			<a href="https://ai.google.dev/edge/mediapipe/solutions/vision/pose_landmarker" target="_blank">Mediapipe</a>.
+			<br>
+			The idea is an extension of one of my projects, <a href="/squat_king" target="_blank">Squat King</a>. With more of a focus on
+			customizability, since you can asign any pose with a shortcut. Thus meaning I need a way to save and store landmarks, for which I had 
+			to create custom JSON parser and serializer.
+			<br>
+			I also needed a way to compare a "stored" pose with the pose that's being executed, 
+			which opens a lot of decisions (should the pose take into account the position on-camera? does orientation matter? which is the main landmark? what is the error margin? etc.)
+			<br><br>
+			Overall it was pretty easy to make since I had already done <a href="/squat_king" target="_blank">Squat King</a>, 
+			nontheless I learnt many new things and expanded my knowledge on old ones.<br>
+			It was a little experiment so it lacks QoL and basic functionalities.<br>
+			I might (or might not) update it in the future by adding either a menu with <a href="https://docs.python.org/3/library/tkinter.html" target="_blank">Tkinter</a> 
+			or a small CLI.
 		</p>
 		<div style="font-size: 55px; display: block; margin-bottom: 50px;">
 			<i class="skill devicon-opencv-plain-wordmark colored" title="Open CV"></i>
@@ -31,15 +45,15 @@
 	<div style="display: block; text-align: center;">
 		<a href="https://github.com/albertcaballero/hand_recorder" target="_blank" class="btn">Github repository</a>
 	</div>
-	<p class="plaintext">
-		It was a little experiment so it lacks QoL and basic functionalities. <br>
-		I might (or might not) update it in the future.
-	</p>
 </body>
 
 
 <style>
-.plaintext {
+p {
+	width: 45%;
+	margin: auto;
+	margin-bottom: 50px;
+	text-align: justify;
 	font-size: larger;
 	letter-spacing: 1.5px;
 	line-height: 120%;
