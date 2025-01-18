@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hand cut</title>
+	<meta name="author" content="Albert Caballero">
+	<meta name="description" content="Hand tracking shortcuts for PC">
+	<link rel="icon" type="image/x-icon" href="/static/logo.png">
+	<link rel="stylesheet" href="/static/albert_main.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mouse+Memoirs">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Chakra+Petch">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Play">
+	<link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" /> 
+</head>
+<body>
+	{% include '_header_albert.html' %}
+	<div style="display: block; text-align: center;">
+		<h1 style="font-size: 40px;">MiniRT</h1>
+		<p>
+			MiniRT is a simple CPU-based raytracer. This was a pair project for 42 and probably one of my favorite projects there. 
+			<br><br>
+			The program uses the <a href=" https://harm-smits.github.io/42docs/libs/minilibx" target="_blank">MinilibX</a> graphics library from 42, 
+			I am not a fan of this library (no one is), but such were the requirements. The code also needed to be in C and 
+			<a href="https://github.com/42Paris/norminette-v2" target="_blank">Norminette</a>-friendly, 
+			so this really makes any work on this scale really tedious. These are one of the reasons why we decided to stick to the base requirements, 
+			even though our viewscope for the project was much larger.
+			<br><br>
+			I have always liked graphics (I love 3D modeling) and being able to understand how it works from 0 by literally recreating it was a really amazing experience.
+			I now always see games in a different way XD
+			<br>
+			Since my view for a Raytracer was never fully realized with this project, my plan is for one day to do a full Raytracer in C++ in the GPU
+			with all the necessary functionalities (transparency, materials, normal maps, etc...) 
+			and even add animations or movement to it.
+			<br><br>
+			Credits to my partner for the project: <a href="https://github.com/onchainjavi" target="_blank">Javi Marinel</a>
+		</p>
+	</div>
+	<div style="display: block; text-align: center;">
+		<a href="https://github.com/albertcaballero/42minirt" target="_blank" class="btn">Github repository</a>
+	</div>
+	<h2>Examples</h2>
+	<img src="/static/minirt/color_lights.png" width="600px">
+	<img src="/static/minirt/columns.png" width="600px">
+	<img src="/static/minirt/seamoon.png" width="600px">
+</body>
+
+
+<style>
+p {
+	width: 45%;
+	margin: auto;
+	margin-bottom: 50px;
+	text-align: justify;
+	font-size: larger;
+	letter-spacing: 1.5px;
+	line-height: 120%;
+}
+</style>

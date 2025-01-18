@@ -14,6 +14,7 @@ urlpatterns = [
 	path('main/', views.mainPage),
 	path('math/', views.matematicsPage),
 	path('pong/', views.pongPage),
+	path('minirt/', views.miniRTPage),
 	# path('faster_reader/', views.fasterReaderPage),
 	# path('accounts/', include('django.contrib.auth.urls')),
 ]

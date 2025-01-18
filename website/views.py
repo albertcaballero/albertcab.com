@@ -33,5 +33,7 @@ def matematicsPage(request):
 def pongPage(request):
 	return render(request, 'pong.html')
 
+def miniRTPage(request):
+	return render(request, 'minirt.html')
 
 # https://albert.sh/ copy this guy
