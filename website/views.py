@@ -31,7 +31,7 @@ def matematicsPage(request):
 	return render(request, 'matematics.html')
 
 def pongPage(request):
-	return render(request, 'pong.html')
+	return render(request, 'transcendence/profile.html')
 
 def miniRTPage(request):
 	return render(request, 'minirt.html')
