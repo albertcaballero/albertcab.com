@@ -4,34 +4,82 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>TRANSCENDENCE</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
-<body>
-	<div class="title">
-		<img src="https://static-00.iconduck.com/assets.00/person-icon-1901x2048-a9h70k71.png" class="pfp">
+<body onload="loadPage()">
+	<div style="width: 70%; margin: 3% auto; min-height: 200px;">
+		<div style="float: left; margin-right: 20px;">
+			<img src="https://i.pinimg.com/236x/f4/b5/af/f4b5af3da6f9e4b90bb11d0afcf0470d.jpg" class="pfp" id="usr_img">
+		</div>
 		<div class="name">
-			<h1 style="font-size: 40px;">Albert Caballero</h1>
-			<h3 style="font-size: larger;">Software and web developer</h3>
+			<h1 style="font-size: 40px;" id="usr_name">Albert Caballero</h1>
+			<h3 style="font-size: larger;" id="usr_bio">Best Pong Player</h3>
 		</div>
-		<div class="score">
-			<h1>WINS / LOSSES</h1>
-			<h1>40 / 12</h1>
+		<div class="stats">
+			<h1 title="Wins/Losses" id="usr_wl">2 / 1</h1>
+			<h1 title="Score Ratio" id="usr_ratio">37.0</h1>
 		</div>
+		<button style="float: right; margin-right: 20px;" id="editProfile" onclick="alert('to edit profile')">Edit Profile</button>
 	</div>
-	<div class="history">
-		<h1>MATCH HISTORY</h1>
-		<div class="match">
-			<h1>1</h1>
-			<img src="https://static-00.iconduck.com/assets.00/person-icon-1901x2048-a9h70k71.png" width="80px">
-			<h1>vs</h1>
-			<img src="https://static-00.iconduck.com/assets.00/person-icon-1901x2048-a9h70k71.png" width="80px">
-			<h1>34</h1>
+	<div style="width: 70%; text-align: center; margin: 3% auto;">
+		<div class="history">
+			<h1>MATCH HISTORY</h1>
+			<table style="width: 90%; margin: auto;" id="match_history">
+				<tr class="history_scores">
+					<td>10</td>
+					<td><img src="https://i.pinimg.com/236x/f4/b5/af/f4b5af3da6f9e4b90bb11d0afcf0470d.jpg" width="80px" style="box-shadow: 3px 3px 8px 0 green;"></td>
+					<td>vs</td>
+					<td><img src="https://play-lh.googleusercontent.com/2zorpA9peRFcwZM5SLSAx80gLCA3YrknRXQwPW-Hz2AJyBcvBJiO9vuP6DvlX3FRZXMv=w526-h296-rw" width="80px" style="box-shadow: 3px 3px 8px 0 red;"></td>
+					<td>2</td>
+				</tr>
+				<tr class="history_dates">
+					<td colspan="2" style="text-align: left; padding-left: 50px;">0:55</td>
+					<td colspan="3"  style="text-align: right; padding-right: 50px;">15/01</td>
+				</tr>
+				<tr class="history_scores">
+					<td>10</td>
+					<td><img src="https://i.pinimg.com/236x/f4/b5/af/f4b5af3da6f9e4b90bb11d0afcf0470d.jpg" width="80px" style="box-shadow: 3px 3px 8px 0 red;"></td>
+					<td>vs</td>
+					<td><img src="https://play-lh.googleusercontent.com/2zorpA9peRFcwZM5SLSAx80gLCA3YrknRXQwPW-Hz2AJyBcvBJiO9vuP6DvlX3FRZXMv=w526-h296-rw" width="80px" style="box-shadow: 3px 3px 8px 0 green;"></td>
+					<td>20</td>
+				</tr>
+				<tr class="history_dates">
+					<td colspan="2" style="text-align: left; padding-left: 50px;">7:27</td>
+					<td colspan="3"  style="text-align: right; padding-right: 50px;">12/01</td>
+				</tr>
+				<tr class="history_scores">
+					<td>1000</td>
+					<td><img src="https://i.pinimg.com/236x/f4/b5/af/f4b5af3da6f9e4b90bb11d0afcf0470d.jpg" width="80px" style="box-shadow: 3px 3px 8px 0 green;"></td>
+					<td>vs</td>
+					<td><img src="https://i.pinimg.com/736x/a8/4a/a3/a84aa310f33862e53c30f55bdf94b013.jpg" width="80px" style="box-shadow: 3px 3px 8px 0 red;"></td>
+					<td>20</td>
+				</tr>
+				<tr class="history_dates">
+					<td colspan="2" style="text-align: left; padding-left: 50px;">12:42</td>
+					<td colspan="3"  style="text-align: right; padding-right: 50px;">03/01</td>
+				</tr>
+			</table>
 		</div>
-		<div class="match">
-			<h1>1</h1>
-			<img src="https://static-00.iconduck.com/assets.00/person-icon-1901x2048-a9h70k71.png" width="80px">
-			<h1>vs</h1>
-			<img src="https://static-00.iconduck.com/assets.00/person-icon-1901x2048-a9h70k71.png" width="80px">
-			<h1>34</h1>
+		<div class="friends">
+			<h1>FRIENDS</h1>
+			<div class="friend">
+				<img src="https://play-lh.googleusercontent.com/2zorpA9peRFcwZM5SLSAx80gLCA3YrknRXQwPW-Hz2AJyBcvBJiO9vuP6DvlX3FRZXMv=w526-h296-rw" width="60px">
+				<h2 style="margin-left: 3%;" onclick="alert('to profile')">Pedrito Juanito</h2>
+				<div style="margin-left: auto;">
+					<img src="https://cdn-icons-png.flaticon.com/512/842/842184.png" style="width: 40px; height: 40px; cursor: pointer;" title="Match" onclick="alert('retado a match')">
+					<img src="	https://cdn-icons-png.flaticon.com/512/8184/8184225.png" style="width: 40px; height: 40px; cursor: pointer;" title="Unfriend" onclick="alert('unfriended')">
+				</div>
+			</div>
+			<div class="friend">
+				<img src="https://i.pinimg.com/736x/a8/4a/a3/a84aa310f33862e53c30f55bdf94b013.jpg" width="60px">
+				<h2 style="margin-left: 3%;" onclick="alert('to profile')">Juan Pablito</h2>
+				<div style="margin-left: auto;">
+					<img src="https://cdn-icons-png.flaticon.com/512/842/842184.png" style="width: 40px; height: 40px; cursor: pointer;" title="Match" onclick="alert('retado a match')">
+					<img src="	https://cdn-icons-png.flaticon.com/512/8184/8184225.png" style="width: 40px; height: 40px; cursor: pointer;" title="Unfriend" onclick="alert('unfriended')">
+				</div>
+			</div>
 		</div>
 	</div>
 </body>
@@ -39,7 +87,36 @@
 
 <style>
 body{
-	background-color: rgb(127, 172, 255);
+	background-color: rgb(208, 127, 255);
+	/* font-family: "Press Start 2P", arial; */
+	/* font-size: x-small; */
+	font-family: arial;
+}
+button{
+	border: none;
+	background-color: rgba(217, 217, 217, 0.548);
+	padding: 10px;
+	cursor: pointer;
+}
+table{
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+td{
+	overflow: hidden;
+	/* background-color: rgba(217, 217, 217, 0.548); */
+}
+.history_scores{
+	padding-top: 10px;
+	padding: 5px;
+	font-size: 40px;
+	font-weight: 700;
+	border-top: 2px solid black;
+}
+.history_dates{
+	font-size: 30px;
+	font-weight: 500;
+	color: rgb(97, 97, 97);
 }
 .title{
 	display: flex;
@@ -53,34 +130,142 @@ body{
 	width: 170px;
 	height: 170px;
 	border-radius: 50%;
-	display: inline-block;
-	position: relative;
+	/* background-color: rgb(23, 206, 93); */
 }
 
 .name{
-	display: inline-block;
-  margin-left: 2%;
-  text-align: left;
-  vertical-align: top;
-}
-.score{
-	background-color: rgba(217, 217, 217, 0.507);
-	margin-left: 20%;
-	padding: 1%;
+	position: absolute;
+	left: 500px;
+	right: 580px;
+	white-space: nowrap;
+	padding-left: 18px;
+	padding-bottom: 18px;
 }
 .history{
-	display: block;
-	width: 40%;
-	margin-top: 3%;
-	background-color: rgba(217, 217, 217, 0.877);
+	width: 55%;
+	background-color: rgba(217, 217, 217, 0.548);
+	border-radius: 3px;
 	padding: 1%;
+	float: left;
+}
+.stats{
+	float: right; 
+	text-align: center;
+	border-radius: 3px;
+	background-color: rgba(217, 217, 217, 0.548);
+	padding: 10px;
+	width: 150px;
 }
 .match{
 	display: flex;
 	padding: 10px;
 	justify-content: space-evenly;
-	background-color: rgba(129, 71, 71, 0.877);
+	/* background-color: rgba(129, 71, 71, 0.877); */
+	border-top: 1px solid black;
 	margin-top: 10px;
+	align-items: center;
+	height: 90px;
 }
+
+.friends{
+	width: 35%;
+	background-color: rgba(217, 217, 217, 0.548);
+	border-radius: 3px;
+	padding: 1%;
+	float: right;
+}
+.friend{
+	display: flex;
+	padding: 10px;
+	border-top: 1px solid black;
+	justify-content: space-between;
+	/* background-color: rgba(129, 71, 71, 0.877); */
+	margin-top: 10px;
+	align-items: center;
+	height: 70px;
+}
+	.friend:hover h2{
+		text-decoration: underline;
+		cursor: pointer;
+	}
 </style>
+
+<script>
+const jsonResponse = {
+	"user": {
+		"name": "Albert Caballero",
+		"username": "alcaball",
+		"bio": "Best Pong Player",
+		"wins": 2,
+		"losses": 1
+	},
+	"friends": [
+		{
+			"name": "Pedrito Juanito",
+			"username": "pjuanito"
+		},
+		{
+			"name": "Juan Pablito",
+			"username": "jpablito"
+		}
+	],
+	"history": [
+		{
+			"p2": "pjuanito",
+			"p1score": 10,
+			"p2score": 2,
+			"duration": "0:55",
+			"date": "2025-01-15"
+		},
+		{
+			"p2": "pjuanito",
+			"p1score": 10,
+			"p2score": 20,
+			"duration": "7:27",
+			"date": "2025-01-12"
+		},
+		{
+			"p2": "pjuanito",
+			"p1score": 1000,
+			"p2score": 20,
+			"duration": "12:42",
+			"date": "2025-01-03"
+		}
+	]
+}
+
+function loadPage(){
+	const colors = ["(127, 172, 255)","(148, 255, 127)", "(255, 174, 127)", "(246, 255, 127)", "(208, 127, 255)"];
+	let i = Math.floor(Math.random() * colors.length);
+	document.body.style.backgroundColor = "rgb"+colors[i];
+
+	if (1 != 1){ //(profile != user) si el perfil en vista NO corresponde al del usuario logeado
+		document.getElementById("editProfile").remove();
+	}
+	document.getElementById("usr_name").innerText = jsonResponse['user']['name'];
+	document.getElementById("usr_bio").innerText = jsonResponse['user']['bio'];
+	document.getElementById("usr_wl").innerText = jsonResponse['user']['wins'] + " / " + jsonResponse['user']['losses'];
+	const ratio = jsonResponse['user']['wins'] / (jsonResponse['user']['losses'] + jsonResponse['user']['wins']) * 100;
+	document.getElementById("usr_ratio").innerText = ratio.toFixed(1) + "%";
+
+	jsonResponse['history'].forEach(match => {
+		const scoreRow = document.createElement('tr');
+		scoreRow.setAttribute('class', 'history_scores');
+		
+		let cell;
+		const winner =  match['p1score'] > match['p2score'];
+		cell = document.createElement('td');
+		cell.textContent = match['p1score'];
+		row.appendChild(cell);
+
+		cell = document.createElement('td');
+		cell.textContent = match['p1score'];
+		row.appendChild(cell);
+
+		const dateRow = document.createElement('tr');
+		dateRow.setAttribute('class', 'history_dates');
+	});
+}
+
+</script>
 </html>

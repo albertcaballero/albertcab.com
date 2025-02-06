@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>TRANSCENDENCE</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body onload="loadPage()">
+	<form id="contactForm" method="POST" enctype="multipart/form-data" style="padding-left: 40px;" action="" >
+		<img src="https://i.pinimg.com/236x/f4/b5/af/f4b5af3da6f9e4b90bb11d0afcf0470d.jpg" class="userImg" onclick="alert('Changes image')">
+		
+		<input id="id_name" type="text" name="name" maxlength="50" placeholder="Name" required="" value="Albert Caballero" class="input"></input>
+		<input id="id_username" type="text" name="username" maxlength="50" placeholder="Username" required="" value="Alcaball" class="input"></input>
+		<textarea id="id_body" name="body" required="" placeholder="Bio" cols="20" rows="5" class="input">Best Pong Player</textarea>
+		<input id="id_email" type="text" name="email" maxlength="50" placeholder="Email" value="alcaball@student.42.fr" class="input"></input>
+		<input type="submit" value="Submit" class="submit-btn">
+	</form>
+</body>
+
+
+<style>
+.input{
+	border: none;
+	display: block;
+	font-family: Arial;
+	margin-top: 15px;
+	padding: 8px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	width: 70%;
+	font-size: larger;
+}
+.userImg{
+	cursor: pointer;
+}
+	.userImg:hover{
+		filter: brightness(40%);
+	}
+.submit-btn{
+	background-color: rgb(185, 235, 196);
+	font-family: Arial;
+	padding: 1%;
+	margin-top: 1.5%;
+	font-size: x-large;
+	cursor: pointer;
+	border: solid 2px black;
+	width: 30%;
+	transition: all 0.2s;
+}
+	.submit-btn:hover{
+		transform: translateY(-2px);
+		background-color: rgb(135, 255, 167);
+	}
+	.submit-btn:active{
+		transform: translateY(4px);
+	}
+</style>
+
+<script>
+function loadPage(){
+	colors = ["(127, 172, 255)","(148, 255, 127)", "(255, 174, 127)", "(246, 255, 127)", "(208, 127, 255)"];
+	i = Math.floor(Math.random() * colors.length);
+	document.body.style.backgroundColor = "rgb"+colors[i];
+
+	//if profile != user // si el perfil en vista NO corresponde al del usuario logeado
+	// document.getElementById("editProfile").remove()
+	
+}
+</script>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>TRANSCENDENCE</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body onload="loadPage()">
+
+	<h1 style="margin-left: 10%; margin-top: 2%;">Leaderboard</h1>
+	<div style="display: flex; justify-content: space-between; width: 80%; margin-left: auto; margin-right: auto; margin-bottom: 40px;">
+		<input type="text" id="search" size="50" placeholder="Search..." />
+	</div>
+	<table style="width: 40%; margin-left: auto; margin-right: auto; margin-bottom: 100px;" id="user">
+		<tbody>
+			<td># 1</td>
+			<td><img src="https://i.pinimg.com/236x/f4/b5/af/f4b5af3da6f9e4b90bb11d0afcf0470d.jpg" width="70px"></td>
+			<td>Alcaball</td>
+			<td>1000</td>
+			<td>11 / 11 : 50%</td>
+		</tbody>
+	</table>
+	<table style="width: 60%; margin-left: auto; margin-right: auto;" id="leaderboard">
+		<thead>
+		<tr>
+			<th style="width: 40px;"></th>
+			<th style="width: 100px;"></th>
+			<th>Name </th>
+			<th>Matches</th>
+			<th>Stats</th>
+			<th style="width: 50px;"></th>
+		</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+</body>
+
+
+<style>
+body{
+	font-family: arial;
+	font-size: large;
+}
+table{
+	border-collapse: collapse;
+}
+td{
+	overflow: hidden;
+	background-color: rgba(217, 217, 217, 0.548);
+	padding: 5px;
+	padding-left: 15px;
+}
+th{
+	text-align: left;
+	padding-left: 15px;
+	font-size: larger;
+}
+tr{
+	border-bottom: 1px solid black;
+}
+
+input{
+	background: none;
+	border-width: 0 0 1px;
+	height: 35px;
+	border-color: rgb(0, 0, 0);
+	/* transition: all 0.5s; */
+}
+input::placeholder{
+	font-size: larger;
+	font-family:  Arial;
+}
+	input:focus{
+		border-color: rgb(97, 3, 3);
+		border-width: 0 0 2px;
+		border-radius: 5px 5px 0 0;
+		outline: none;
+	}
+	/* input:focus::placeholder{
+		color: rgb(97, 3, 3);
+	} */
+
+.clickable-img{
+	cursor: pointer;
+	width: 30px;
+}
+	.clickable-img:hover{
+		transform: translateY(-2px);
+	}
+</style>
+
+<script>
+function loadPage(){
+	colors = ["(127, 172, 255)","(148, 255, 127)", "(255, 174, 127)", "(246, 255, 127)", "(208, 127, 255)"];
+	i = Math.floor(Math.random() * colors.length);
+	document.body.style.backgroundColor = "rgb"+colors[i];
+
+	users = [
+		{"Name": "Alcaball", "Matches": 1000, "Stats": "11 / 11 : 50%" },
+		{"Name": "User2", "Matches": 381, "Stats": "11 / 11 : 50%" },
+		{"Name": "Pedrito", "Matches": 280, "Stats": "11 / 11 : 50%" },
+		{"Name": "User33", "Matches": 38, "Stats": "11 / 11 : 50%" },
+		{"Name": "User5", "Matches": 2, "Stats": "11 / 11 : 50%" },
+	];
+	autocomplete(document.getElementById("search"));
+	generateTable(users);
+	
+}
+
+function generateTable(data) {
+	const table = document.getElementById('leaderboard');
+	const tbody = table.querySelector('tbody');
+
+	while (tbody.firstChild) {
+		tbody.removeChild(tbody.firstChild);
+	}
+	if (data.length === 0)
+		return;
+	const headers = Object.keys(data[0]);
+	let rank = 1;
+	data.forEach(user => {
+		const row = document.createElement('tr');
+		const cellRank = document.createElement('td');
+		cellRank.innerHTML = '# '+rank;
+		row.appendChild(cellRank);
+		const cellimg = document.createElement('td');
+		cellimg.innerHTML = '<img src="https://i.pinimg.com/236x/f4/b5/af/f4b5af3da6f9e4b90bb11d0afcf0470d.jpg" width="70px">'
+		cellimg.setAttribute('class', 'tbImg');
+		row.appendChild(cellimg);
+		headers.forEach(header => {
+			let txtcontent = user[header];
+			const cell = document.createElement('td');
+			if (typeof user[header] == "string"){
+				txtcontent = user[header].substring(0, 90);
+				if (user[header].length > 90)
+					txtcontent += '...';
+			}
+			cell.textContent = txtcontent;
+			row.appendChild(cell);
+		});
+		const moreBtn = document.createElement('td');
+		moreBtn.innerHTML = '<img class="clickable-img" src="https://cdn-icons-png.flaticon.com/512/842/842184.png" onclick="alert(\'Retado a Match\')">'
+		row.appendChild(moreBtn);
+		tbody.appendChild(row);
+		++rank;
+	});
+}
+
+function autocomplete(inp) {
+	inp.addEventListener("input", function(e) {
+		let usersNames = [];
+		let usersMatch = [];
+		users.forEach(usr =>{
+			usersNames.push(usr['Name']);
+		});
+		let val = this.value;
+		// if (!val) 
+		// 	return false;
+		for (i = 0; i < usersNames.length; ++i) {
+			if (usersNames[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+				usersMatch.push(users[i]);
+			}
+		}
+		generateTable(usersMatch);
+	});
+}
+</script>
+</html>
