@@ -33,29 +33,3 @@ h1, h2{
 		width: 100px;
 		height: 55px;
 	}
-
-.contact_links{
-	position: fixed;
-	background-color: #00000046;
-	padding: 10px;
-	top: 40%;
-	display: grid;
-	border-radius: 0px 10px 10px 0px;
-	left: 0px;
-}
-
-.fa {
-	padding: 5px;
-	font-size: 35px;
-	width: 40px;
-	text-align: center;
-	line-height: 45px;
-	text-decoration: none;
-	vertical-align: middle;
-	transition: all 0.1s;
-	color: rgb(51, 53, 177);
-}
-	.fa:hover {
-	opacity: 0.7;
-	font-size: 40px;
-	}
